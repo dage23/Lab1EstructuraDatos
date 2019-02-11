@@ -3,49 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FarmaciaLab1.Models;
-using FarmaciaLab1.Helpers;
-using lEstructurasLineales;
+
 namespace FarmaciaLab1.Controllers
 {
-    public class AlmacenamientoEmpleadosController : Controller
+    public class ControlLlegadaController : Controller
     {
-        // GET: Empleados
+        // GET: ControlLlegada
         public ActionResult Index()
-        {
-            return View(Datos.Instance.ListaEmpleados);
-        }
-        public  ActionResult PrincipalM()
         {
             return View();
         }
-        // GET: Empleados/Details/5
+
+        // GET: ControlLlegada/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Empleados/Create
+        // GET: ControlLlegada/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Empleados/Create
+        // POST: ControlLlegada/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
             try
             {
-                var EmpleadoActual = new cEmpleado
-                {
-                    iCodigo = int.Parse(collection["iCodigo"]),
-                    sNombre = collection["sNombre"],
-                    dHorasTrabajadas = double.Parse(collection["dHorasTrabajadas"]),
-                    sEnOficina=collection["sEnOficina"],
-                    
-                };
-                Datos.Instance.ListaEmpleados.Agregar(EmpleadoActual);
+                // TODO: Add insert logic here
+
                 return RedirectToAction("Index");
             }
             catch
@@ -54,13 +42,13 @@ namespace FarmaciaLab1.Controllers
             }
         }
 
-        // GET: Empleados/Edit/5
+        // GET: ControlLlegada/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Empleados/Edit/5
+        // POST: ControlLlegada/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -76,13 +64,13 @@ namespace FarmaciaLab1.Controllers
             }
         }
 
-        // GET: Empleados/Delete/5
+        // GET: ControlLlegada/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Empleados/Delete/5
+        // POST: ControlLlegada/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

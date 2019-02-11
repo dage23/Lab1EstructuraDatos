@@ -11,11 +11,11 @@ namespace lEstructurasLineales
     {
         private cNodo<T> nInicio { get; set; }
         static int iTamano { get; set; }
-        public cListaDoblementeEnlazada()
-        {
-          nInicio = null;
-          iTamano = 0;
-        }
+        //public cListaDoblementeEnlazada()
+        //{
+        //  nInicio = null;
+        //  iTamano = 0;
+        //}
         public void Agregar(T value)
         {
             
@@ -24,15 +24,18 @@ namespace lEstructurasLineales
                 nInicio = new cNodo<T>(value);
                 iTamano = 1;
             }
-            var nNodoAuxiliar = new cNodo<T>(value);
-            var nNodoActual = nInicio;
-            while (nNodoActual.nSiguiente != null)
+            else
             {
-                nNodoActual = nNodoActual.nSiguiente;
-            }
-            nNodoActual.nSiguiente = nNodoAuxiliar;
-            nNodoAuxiliar.nAnterior = nNodoActual;
-            iTamano++;
+                var nNodoAuxiliar = new cNodo<T>(value);
+                var nNodoActual = nInicio;
+                while (nNodoActual.nSiguiente != null)
+                {
+                    nNodoActual = nNodoActual.nSiguiente;
+                }
+                nNodoActual.nSiguiente = nNodoAuxiliar;
+                nNodoAuxiliar.nAnterior = nNodoActual;
+                iTamano++;
+            }            
         }
 
         public bool Buscar(T value)
