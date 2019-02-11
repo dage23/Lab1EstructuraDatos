@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using FarmaciaLab1.Models;
 using FarmaciaLab1.Helpers;
-
+using lEstructurasLineales;
 namespace FarmaciaLab1.Controllers
 {
-    public class EmpleadosController : Controller
+    public class AlmacenamientoEmpleadosController : Controller
     {
         // GET: Empleados
         public ActionResult Index()
         {
-            return View(Datos.Instance.);
+            return View(Datos.Instance.ListaEmpleados);
         }
 
         // GET: Empleados/Details/5
@@ -34,8 +34,14 @@ namespace FarmaciaLab1.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
+                var EmpleadoActual = new cEmpleado
+                {
+                    iCodigo = int.Parse(collection["iCodigo"]),
+                    sNombre = collection["sNombre"],
+                    dHorasTrabajadas = double.Parse(collection["dHorasTrabajadas"]),
+                    bEnOficina=true,
+                };
+                Datos.Instance.ListaEmpleados.Agregar(EmpleadoActual);
                 return RedirectToAction("Index");
             }
             catch

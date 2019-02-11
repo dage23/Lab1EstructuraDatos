@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using FarmaciaLab1.Models;
+using lEstructurasLineales;
 namespace FarmaciaLab1.Helpers
 {
     public class Datos
@@ -18,9 +19,7 @@ namespace FarmaciaLab1.Helpers
                 }
             }
         }
-        public List<cEmpleado> Employees = new List<cEmpleado>();
-
-        public lEstructurasLineales.cListaDoblementeEnlazada<cEmpleado> linkedList = new lEstructurasLineales.cListaDoblementeEnlazada<cEmpleado>();
+        public cListaDoblementeEnlazada<cEmpleado> ListaEmpleados = new cListaDoblementeEnlazada<cEmpleado>();
 
     }
 }

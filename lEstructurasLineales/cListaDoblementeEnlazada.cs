@@ -9,8 +9,13 @@ namespace lEstructurasLineales
 {
     public class cListaDoblementeEnlazada<T> : iEstructuraDatosLineales<T>, IEnumerable<T> where T : IComparable
     {
-        static cNodo<T> nInicio { get; set; }
+        private cNodo<T> nInicio { get; set; }
         static int iTamano { get; set; }
+        public cListaDoblementeEnlazada()
+        {
+          nInicio = null;
+          iTamano = 0;
+        }
         public void Agregar(T value)
         {
             
