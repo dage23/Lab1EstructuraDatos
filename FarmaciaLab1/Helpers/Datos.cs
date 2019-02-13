@@ -21,5 +21,6 @@ namespace FarmaciaLab1.Helpers
         }
         public cListaDoblementeEnlazada<cEmpleado> ListaEmpleados = new cListaDoblementeEnlazada<cEmpleado>();
 
+        public cPila<cEmpleado> PilaEmpleados = new cPila<cEmpleado>();
     }
 }

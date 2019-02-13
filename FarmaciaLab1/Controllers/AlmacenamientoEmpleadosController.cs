@@ -19,6 +19,28 @@ namespace FarmaciaLab1.Controllers
         {
             return View();
         }
+
+        public ActionResult MenuBuscar()
+        {
+            return View();
+        }
+        public ActionResult Buscador(string SerchString)
+        {
+            Datos.Instance.ListaEmpleados.Where(i => i.sNombre.ToString() == SerchString);
+            return View(Datos.Instance.ListaEmpleados.OrderBy(it => it.sNombre));
+        }
+        //public async cEmpleado<IActionResult> Index(string searchString)
+        //{
+        //    var movies = from m in _context.Movie
+        //                 select m;
+
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        movies = movies.Where(s => s.Title.Contains(searchString));
+        //    }
+
+        //    return View(await movies.ToListAsync());
+        //}
         // GET: Empleados/Details/5
         public ActionResult Details(int id)
         {

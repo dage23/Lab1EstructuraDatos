@@ -176,9 +176,13 @@
     <Content Include="Views\AlmacenamientoEmpleados\Create.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\Index.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\PrincipalM.cshtml" />
+    <Content Include="Views\BuscadorMenu.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\MenuBuscar.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\Buscador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Buscar\" />
     <Folder Include="Views\ControlLlegada\" />
   </ItemGroup>
   <ItemGroup>

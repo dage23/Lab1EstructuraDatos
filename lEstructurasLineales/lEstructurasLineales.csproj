@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="cListaDoblementeEnlazada.cs" />
     <Compile Include="cNodo.cs" />
+    <Compile Include="cPila.cs" />
     <Compile Include="iEstructuraDatosLineales.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

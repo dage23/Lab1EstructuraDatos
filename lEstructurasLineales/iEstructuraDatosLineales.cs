@@ -9,7 +9,7 @@ namespace lEstructurasLineales
     interface iEstructuraDatosLineales<T>
     {
         void Agregar(T value);
-        bool Buscar(T value);
+        void Buscar(T value);
         void Eliminar(T value);
     }
 }

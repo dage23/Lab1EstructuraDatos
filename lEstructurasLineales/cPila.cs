@@ -7,17 +7,12 @@ using System.Threading.Tasks;
 
 namespace lEstructurasLineales
 {
-    public class cListaDoblementeEnlazada<T> : iEstructuraDatosLineales<T>, IEnumerable<T> where T : IComparable
+    public class cPila<T> : iEstructuraDatosLineales<T>, IEnumerable<T> where T : IComparable
     {
         private cNodo<T> nInicio { get; set; }
         static int iTamano { get; set; }
-        //public cListaDoblementeEnlazada()
-        //{
-        //  nInicio = null;
-        //  iTamano = 0;
-        //}
         public void Agregar(T value)
-        {            
+        {
             if (iTamano == 0)
             {
                 nInicio = new cNodo<T>(value);
@@ -27,20 +22,21 @@ namespace lEstructurasLineales
             {
                 var nNodoAuxiliar = new cNodo<T>(value);
                 var nNodoActual = nInicio;
-                while (nNodoActual.nSiguiente != null)
-                {
-                    nNodoActual = nNodoActual.nSiguiente;
-                }
-                nNodoActual.nSiguiente = nNodoAuxiliar;
-                nNodoAuxiliar.nAnterior = nNodoActual;
+                nNodoAuxiliar.nSiguiente = nInicio;
+                nInicio = nNodoAuxiliar;
+                //nNodoActual.nSiguiente = nNodoAuxiliar;
+                //nNodoAuxiliar.nAnterior = nNodoActual;
                 iTamano++;
-            }            
+            }
+        }
+        public void Buscar(T value)
+        {
+            throw new NotImplementedException();
         }
         public void Eliminar(T value)
         {
             throw new NotImplementedException();
         }
-
         public IEnumerator<T> GetEnumerator()
         {
             var nNodoActual = nInicio;
@@ -50,15 +46,9 @@ namespace lEstructurasLineales
                 nNodoActual = nNodoActual.nSiguiente;
             }
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
-
-        public void Buscar(T value)
-        {
-            throw new NotImplementedException();
         }
     }
 }
