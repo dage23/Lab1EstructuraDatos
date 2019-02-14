@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Farma S.A.</title>
+    <title>@ViewBag.Title - Farma S.A.</title>@*--------A--------*@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">@*--------B--------*@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,9 +21,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "PrincipalM", "AlmacenamientoEmpleados")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Inicio", "PrincipalM", "AlmacenamientoEmpleados")</li>
+                   <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                   <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>*@
+                    @*Inicio________________________________________________*@
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="dropdown open">
+                        <a href="#" class="dropdown-menu" data-toggle="dropdown" role="button" aria-expanded="true">
+                            Admin <span class="custom-control"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Ingresar", "Index")</li>
+                            <li>@Html.ActionLink("Control", "Index")</li>
+                            <li>@Html.ActionLink("Simulación salida", "Index")</li>
+                            <li>@Html.ActionLink("Ingreso y Egreso", "Index")</li>
+                            <li>@Html.ActionLink("Buscar", "Index")</li>
+                        </ul>
+                    </li>@*Fin_________________________________________________*@
                 </ul>
             </div>
         </div>
@@ -32,10 +46,9 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Farma S.A.</p>
+            <p>&copy; @DateTime.Now.Year - Todos los derechos reservador por Farma S.A.</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

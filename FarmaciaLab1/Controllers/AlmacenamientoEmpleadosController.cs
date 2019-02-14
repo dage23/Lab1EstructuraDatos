@@ -19,7 +19,6 @@ namespace FarmaciaLab1.Controllers
         {
             return View();
         }
-
         public ActionResult MenuBuscar()
         {
             return View();
@@ -46,7 +45,6 @@ namespace FarmaciaLab1.Controllers
         {
             return View();
         }
-
         // GET: Empleados/Create
         public ActionResult Create()
         {
@@ -75,13 +73,11 @@ namespace FarmaciaLab1.Controllers
                 return View();
             }
         }
-
         // GET: Empleados/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
-
         // POST: Empleados/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
@@ -97,13 +93,11 @@ namespace FarmaciaLab1.Controllers
                 return View();
             }
         }
-
         // GET: Empleados/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
-
         // POST: Empleados/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
