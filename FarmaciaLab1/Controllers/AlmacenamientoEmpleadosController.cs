@@ -13,6 +13,7 @@ namespace FarmaciaLab1.Controllers
         // GET: Empleados
         public ActionResult Index()
         {
+            ViewBag.Bienvenido = "Hola Mundo!";
             return View(Datos.Instance.ListaEmpleados);
         }
         public  ActionResult PrincipalM()
@@ -23,23 +24,30 @@ namespace FarmaciaLab1.Controllers
         {
             return View();
         }
-        public ActionResult Buscador(string SerchString)
+
+        public ActionResult DetalleBuscar(int iCodigo)
         {
-            Datos.Instance.ListaEmpleados.Where(i => i.sNombre.ToString() == SerchString);
-            return View(Datos.Instance.ListaEmpleados.OrderBy(it => it.sNombre));
+            return View(Datos.Instance.ListaEmpleados.Get(iCodigo));
         }
-        //public async cEmpleado<IActionResult> Index(string searchString)
-        //{
-        //    var movies = from m in _context.Movie
-        //                 select m;
 
-        //    if (!String.IsNullOrEmpty(searchString))
-        //    {
-        //        movies = movies.Where(s => s.Title.Contains(searchString));
-        //    }
+        public ActionResult Buscador(/*int iCodigo*/)
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Buscador(FormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction("DetalleBuscar", new {iCodigo = collection});
+            }
+            catch (Exception)
+            {
 
-        //    return View(await movies.ToListAsync());
-        //}
+                throw;
+            }
+        }
+
         // GET: Empleados/Details/5
         public ActionResult Details(int id)
         {

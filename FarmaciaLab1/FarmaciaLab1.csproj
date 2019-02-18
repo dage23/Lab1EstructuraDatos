@@ -179,6 +179,8 @@
     <Content Include="Views\BuscadorMenu.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\MenuBuscar.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\Buscador.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\BuscadorOriginal.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\DetalleBuscar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

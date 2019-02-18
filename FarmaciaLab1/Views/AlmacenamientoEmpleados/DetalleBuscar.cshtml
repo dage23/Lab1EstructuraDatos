@@ -1,0 +1,50 @@
+﻿@model FarmaciaLab1.Models.cEmpleado
+
+@{
+    ViewBag.Title = "DetalleBuscar";
+}
+
+<h2>DetalleBuscar</h2>
+
+<div>
+    <h4>cEmpleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iCodigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iCodigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dHorasTrabajadas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dHorasTrabajadas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sEnOficina)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sEnOficina)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

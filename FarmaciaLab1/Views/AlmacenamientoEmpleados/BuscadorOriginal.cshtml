@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FarmaciaLab1.Models.cEmpleado>
+
+@{
+    ViewBag.Title = "BuscadorOriginal";
+}
+
+<h2>BuscadorOriginal</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Empleado", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iCodigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dHorasTrabajadas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sEnOficina)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iCodigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dHorasTrabajadas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sEnOficina)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
