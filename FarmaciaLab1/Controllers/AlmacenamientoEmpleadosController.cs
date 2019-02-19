@@ -39,7 +39,7 @@ namespace FarmaciaLab1.Controllers
         {
             try
             {
-                return RedirectToAction("DetalleBuscar", new {iCodigo = collection});
+                return RedirectToAction("DetalleBuscar", new { iCodigo = int.Parse(collection["iCodigo"]) });
             }
             catch (Exception)
             {
