@@ -59,12 +59,26 @@ namespace lEstructurasLineales
             }
             return GAux.sInformacion;
         }
+        public T GetNombre(string EmpleadoNombre)//Buscando por codigo
+        {
+            var GAux = nInicio;
+            for (int i = 0; i < iTamano - 1; i++)
+            {
+                GAux = GAux.nSiguiente;
+            }
+            return GAux.sInformacion;
+        }
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
         public void Buscar(T value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Pop()
         {
             throw new NotImplementedException();
         }

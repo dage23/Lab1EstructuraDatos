@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FarmaciaLab1.Models.cEmpleado>
+
+@{
+    ViewBag.Title = "ParqueoPop";
+}
+
+<h2>Orden de Parqueo</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iCodigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sEnOficina)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iCodigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sEnOficina)
+        </td>
+    </tr>
+}
+
+</table>

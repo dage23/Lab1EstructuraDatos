@@ -29,6 +29,15 @@ namespace lEstructurasLineales
                 iTamano++;
             }
         }
+        public T Pop()
+        {
+            var nNodoActual = nInicio;
+            while (nNodoActual.nSiguiente!=null)
+            {
+                nNodoActual = nNodoActual.nSiguiente;
+            }
+            return nNodoActual.sInformacion;
+        }
         public void Buscar(T value)
         {
             throw new NotImplementedException();

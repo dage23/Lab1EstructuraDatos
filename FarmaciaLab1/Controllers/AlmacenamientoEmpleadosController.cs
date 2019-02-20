@@ -25,12 +25,15 @@ namespace FarmaciaLab1.Controllers
             return View();
         }
 
+        public ActionResult ParqueoPop()
+        {
+            return View(Datos.Instance.PilaEmpleados);
+        }
         public ActionResult DetalleBuscar(int iCodigo)
         {
             return View(Datos.Instance.ListaEmpleados.Get(iCodigo));
         }
-
-        public ActionResult Buscador(/*int iCodigo*/)
+        public ActionResult Buscador()
         {
             return View();
         }
@@ -40,6 +43,35 @@ namespace FarmaciaLab1.Controllers
             try
             {
                 return RedirectToAction("DetalleBuscar", new { iCodigo = int.Parse(collection["iCodigo"]) });
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public ActionResult Simulacion(int iCodigo)
+        {
+            var std = Datos.Instance.ListaEmpleados.Where (s => s.iCodigo == iCodigo).FirstOrDefault();
+
+            return View(std);
+            }
+        [HttpPost]
+        public ActionResult Simulacion(cEmpleado std)
+        {
+            var vNombre = std.sNombre;
+            return RedirectToAction("Index");
+        }
+        public ActionResult BuscaIDSimu()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult BuscaIDSimu(FormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction("Simulacion", new { iCodigo = int.Parse(collection["iCodigo"]) });
             }
             catch (Exception)
             {
@@ -70,10 +102,11 @@ namespace FarmaciaLab1.Controllers
                     iCodigo = int.Parse(collection["iCodigo"]),
                     sNombre = collection["sNombre"],
                     dHorasTrabajadas = double.Parse(collection["dHorasTrabajadas"]),
-                    sEnOficina=collection["sEnOficina"],
+                    sEnOficina = collection["sEnOficina"],
                     
                 };
                 Datos.Instance.ListaEmpleados.Agregar(EmpleadoActual);
+                Datos.Instance.PilaEmpleados.Agregar(EmpleadoActual);
                 return RedirectToAction("Index");
             }
             catch

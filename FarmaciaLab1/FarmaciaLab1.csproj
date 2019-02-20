@@ -181,6 +181,11 @@
     <Content Include="Views\AlmacenamientoEmpleados\Buscador.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\BuscadorOriginal.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\DetalleBuscar.cshtml" />
+    <Content Include="Views\BuscarNombre.cshtml" />
+    <Content Include="Views\BotonBuscarNombre.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\ParqueoPop.cshtml" />
+    <Content Include="Views\Simulacion.cshtml" />
+    <Content Include="Views\BuscaIDSimu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

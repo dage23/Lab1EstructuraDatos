@@ -11,5 +11,6 @@ namespace lEstructurasLineales
         void Agregar(T value);
         void Buscar(T value);
         void Eliminar(T value);
+        T Pop();
     }
 }

@@ -1,0 +1,22 @@
+﻿@model FarmaciaLab1.Models.cEmpleado
+
+@{
+    ViewBag.Title = "BotonBuscarNombre";
+}
+
+<h2>BotonBuscarNombre</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.sNombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.sNombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.sNombre, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Buscar por Nombre" class="btn btn-default" />
+        </div>
+    </div>
+}

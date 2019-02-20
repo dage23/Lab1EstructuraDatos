@@ -26,6 +26,13 @@
         <th>
             @Html.DisplayNameFor(model => model.dSueldo)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HoraLlegada)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.HoraVisita)
+        </th>
         <th></th>
     </tr>
 
@@ -47,10 +54,20 @@
             @Html.DisplayFor(modelItem => item.dSueldo)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.VisitasEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraLlegada)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.HoraVisita)
+        </td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
+        </td>*@
     </tr>
 }
 
