@@ -52,14 +52,26 @@ namespace FarmaciaLab1.Controllers
         }
         public ActionResult Simulacion(int iCodigo)
         {
-            var std = Datos.Instance.ListaEmpleados.Where (s => s.iCodigo == iCodigo).FirstOrDefault();
+            var std = Datos.Instance.ListaEmpleados.Where(s => s.iCodigo == iCodigo).FirstOrDefault();
 
             return View(std);
-            }
+         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Simulacion(cEmpleado std)
         {
-            var vNombre = std.sNombre;
+            try
+            {
+                var Empleado = new cEmpleado
+                {
+
+                };
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             return RedirectToAction("Index");
         }
         public ActionResult BuscaIDSimu()
@@ -103,7 +115,8 @@ namespace FarmaciaLab1.Controllers
                     sNombre = collection["sNombre"],
                     dHorasTrabajadas = double.Parse(collection["dHorasTrabajadas"]),
                     sEnOficina = collection["sEnOficina"],
-                    
+                    HoraLlegada = DateTime.Now,
+                    HoraVisita = DateTime.Now,//Modificar DateTime.Now por la cantidad de visitas + 1h30m
                 };
                 Datos.Instance.ListaEmpleados.Agregar(EmpleadoActual);
                 Datos.Instance.PilaEmpleados.Agregar(EmpleadoActual);
