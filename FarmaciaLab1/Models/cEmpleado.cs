@@ -20,14 +20,13 @@ namespace FarmaciaLab1.Models
         [Display(Name = "En la Oficina?")]
         public string sEnOficina { get; set; }
         [Display(Name = "Numero de Visitas")]
-        public string VisitasEmpleado { get; set; }
+        public int VisitasEmpleado { get; set; }
         [Display(Name = "Hora de Llegada"), DataType(DataType.Time)]
         public DateTime HoraLlegada { get; set; }
         [Display(Name = "Horas de Visita"), DataType(DataType.Time)]
         public DateTime HoraVisita { get; set; }
-
-        public double dSueldo;    
-        
+        [Display(Name = "Salario")]
+        public double dSueldo { get; set; }
         public int CompareTo(object obj)
         {
             var vComparador = (cEmpleado)obj;
