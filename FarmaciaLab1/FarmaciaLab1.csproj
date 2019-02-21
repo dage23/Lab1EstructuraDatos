@@ -182,8 +182,8 @@
     <Content Include="Views\BuscarNombre.cshtml" />
     <Content Include="Views\BotonBuscarNombre.cshtml" />
     <Content Include="Views\AlmacenamientoEmpleados\ParqueoPop.cshtml" />
-    <Content Include="Views\Simulacion.cshtml" />
-    <Content Include="Views\BuscaIDSimu.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\Simulacion.cshtml" />
+    <Content Include="Views\AlmacenamientoEmpleados\BuscaIDSimu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
